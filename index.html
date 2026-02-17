@@ -3,70 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maciej Koprowski | Astrophysicist</title>
+    <title>Dr. Maciej Koprowski | Observational Astrophysicist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; display: flex; color: #333; background: #f4f4f4; }
-        nav { width: 280px; background: #1a2a3a; color: white; height: 100vh; position: fixed; padding: 30px; }
-        nav h1 { font-size: 1.4rem; margin-bottom: 5px; color: #fff; }
-        nav p { font-size: 0.9rem; color: #bdc3c7; margin-bottom: 30px; }
-        nav a { display: block; color: #ecf0f1; text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        nav a:hover { color: #3498db; }
+        :root {
+            --primary: #1a2a3a;
+            --accent: #3498db;
+            --text: #333;
+            --light: #f4f7f6;
+        }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; color: var(--text); background: var(--light); overflow-x: hidden; }
         
-        main { margin-left: 340px; padding: 50px; background: white; min-height: 100vh; box-shadow: -5px 0 15px rgba(0,0,0,0.05); }
-        section { max-width: 800px; margin-bottom: 40px; }
-        h2 { color: #1a2a3a; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .pub-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid #eee; }
-        .pub-title { font-weight: bold; display: block; }
-        .contact-box { background: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #ddd; }
+        /* Side Navigation */
+        nav { 
+            width: 300px; background: var(--primary); color: white; height: 100vh; 
+            position: fixed; padding: 40px; display: flex; flex-direction: column; justify-content: center;
+            z-index: 100;
+        }
+        nav h1 { font-size: 1.8rem; margin: 0; letter-spacing: -1px; }
+        nav p { color: var(--accent); font-weight: 500; margin-bottom: 40px; }
+        nav a { color: #bdc3c7; text-decoration: none; padding: 15px 0; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        nav a:hover { color: white; padding-left: 10px; }
+
+        /* Main Content */
+        main { margin-left: 380px; padding: 0; }
+
+        /* Hero Section with Parallax Image */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), 
+                        url('031.jpg'); /* This uses your attached photo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            color: white;
+        }
+        .hero-content h2 { font-size: 3.5rem; margin: 0; }
+
+        .section { padding: 80px 10%; max-width: 900px; }
+        h3 { font-size: 2rem; color: var(--primary); margin-bottom: 30px; border-left: 5px solid var(--accent); padding-left: 20px; }
         
-        @media (max-width: 768px) {
-            body { flex-direction: column; }
-            nav { width: 100%; height: auto; position: static; padding: 20px; }
-            main { margin-left: 0; padding: 20px; }
+        .grant-card {
+            background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .grant-card:hover { transform: translateY(-5px); }
+        .grant-tag { background: var(--accent); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        /* Tablet/Mobile View */
+        @media (max-width: 1024px) {
+            nav { width: 100%; height: auto; position: relative; }
+            main { margin-left: 0; }
+            .hero { height: 50vh; background-attachment: scroll; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <h1>Maciej Koprowski</h1>
-        <p>Assistant Professor<br>Institute of Astronomy, UMK</p>
-        <a href="#about">Research Interests</a>
-        <a href="#publications">Selected Papers</a>
-        <a href="#contact">Contact</a>
-        <a href="https://orcid.org/0000-0001-5785-1154" target="_blank">ORCID Profile</a>
+        <div data-aos="fade-right">
+            <h1>Maciej Koprowski</h1>
+            <p>Assistant Professor @ UMK</p>
+            <a href="#vision">Research Vision</a>
+            <a href="#grants">Active Grants</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <main>
-        <section id="about">
-            <h2>Research Interests</h2>
-            <p>I am an astrophysicist focused on understanding the evolution of the star-formation rate density (SFRD) and the nature of galaxies in the early Universe. My work utilizes deep multi-wavelength observations, from the ultraviolet to the far-infrared and submillimeter regimes.</p>
-            <ul>
-                <li><strong>The Dusty Universe:</strong> Using data from ALMA and SCUBA-2, I study submillimeter galaxies (SMGs) to reveal star formation obscured by dust.</li>
-                <li><strong>Cosmic Dawn:</strong> Analysis of high-redshift luminosity functions ($z > 3$) to constrain cosmological models.</li>
-            </ul>
+        <section class="hero">
+            <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+                <h2>Exploring the Early Universe</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Unveiling the dust-enshrouded history of cosmic star formation.</p>
+            </div>
         </section>
 
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <div class="pub-item">
-                <span class="pub-title">The evolution of the galaxy UV luminosity function at $z \simeq 3-9$</span>
-                <small>Koprowski et al. (2025) - arXiv:2509.12922</small>
-            </div>
-            <div class="pub-item">
-                <span class="pub-title">A deep ALMA image of the Hubble Ultra Deep Field</span>
-                <small>Koprowski et al. (2016) - ApJ Letters</small>
-            </div>
-            <p><a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Koprowski%2C%20Maciej%22" target="_blank">View all publications on NASA/ADS →</a></p>
+        <section id="vision" class="section" data-aos="fade-up">
+            <h3>Research Vision</h3>
+            <p>My research addresses one of the most fundamental challenges in modern astrophysical cosmology: reconstructing the complete cosmic history of star formation[cite: 13, 516]. While UV observations have reached the highest redshifts, half of the Universe's stellar emission remains hidden by cosmic dust[cite: 17, 521].</p>
+            <p>By leveraging the transformational power of <strong>JWST</strong>, <strong>ALMA</strong>, and <strong>SCUBA-2</strong>, my group investigates the evolution of the star formation rate density (ρSFR) and the physical properties of galaxies from the present day back to the <strong>reionization era ($z \sim 11$)</strong>[cite: 527, 695].</p>
         </section>
 
-        <section id="contact" class="contact-box">
-            <h2>Contact</h2>
-            <p><strong>Email:</strong> mkoprowski@fizyka.umk.pl</p>
-            <p><strong>Address:</strong> Institute of Astronomy, NCU<br>Gagarina 11, 87-100 Toruń, Poland</p>
-            <p><strong>Room:</strong> Radioastronomy, room 19</p>
+        <section id="grants" class="section">
+            <h3 data-aos="fade-up">Leading Research Programs</h3>
+            
+            <div class="grant-card" data-aos="fade-left">
+                <span class="grant-tag">NCN SONATA BIS</span>
+                <h4>Evolution of Star Formation in the Early Universe with JWST</h4>
+                <p>Establishing a research team to analyze the first blank-field, large-area survey from the <strong>James Webb Space Telescope (PRIMER)</strong>[cite: 527, 528]. We focus on the star-forming main sequence, gas mass fractions, and dust properties of the first galaxies[cite: 531, 532, 534].</p>
+            </div>
+
+            <div class="grant-card" data-aos="fade-right">
+                <span class="grant-tag">NCN SONATA</span>
+                <h4>Cosmic History of Star Formation Rate Density</h4>
+                <p>Direct determination of the SFRD out to $z > 5$ using state-of-the-art sub-mm imaging from ALMA (AS2UDS) and JCMT/SCUBA-2[cite: 91, 95, 254]. This project utilizes novel stacking techniques to account for even the faintest galaxies in the early Universe[cite: 93, 260].</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section" data-aos="fade-up">
+            <h3>Contact Information</h3>
+            <div class="contact-grid">
+                <div class="grant-card">
+                    <strong>Institutional Address</strong><br>
+                    Institute of Astronomy, NCU<br>
+                    ul. Gagarina 11, 87-100 Toruń, Poland [cite: 500]
+                </div>
+                <div class="grant-card">
+                    <strong>Digital Presence</strong><br>
+                    Email: mkoprowski@fizyka.umk.pl [cite: 5]<br>
+                    <a href="https://orcid.org/0000-0001-5785-1154" target="_blank">ORCID: 0000-0001-5785-1154</a>
+                </div>
+            </div>
         </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
