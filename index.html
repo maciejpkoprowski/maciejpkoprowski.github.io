@@ -1,129 +1,92 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Maciej Koprowski | Associate Professor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        :root {
-            --dark: #0f172a;
-            --accent: #38bdf8;
-            --gray: #64748b;
-            --light: #f8fafc;
-        }
-
-        body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
-
-        /* Full-screen Entrance Section */
-        .entrance {
+        :root { --accent: #38bdf8; --dark: #0f172a; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: #fff; color: #444; overflow-x: hidden; }
+        
+        /* Intro Section */
+        #intro {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            background: var(--dark);
-            color: white;
+            background: linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.6)), url('031.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: #fff; text-align: center;
         }
+        #intro h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; }
+        #intro p { font-size: 1.5rem; font-weight: 300; color: var(--accent); }
 
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent);
-            margin-bottom: 2rem;
-            animation: fadeInImage 1.5s ease-out;
-        }
-
-        .name-banner {
-            animation: fadeInText 2s ease-out forwards;
-            opacity: 0;
-        }
-
-        .name-banner h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
-        .name-banner p { font-size: 1.25rem; color: var(--accent); margin-top: 0.5rem; }
-
-        /* Content Section */
-        .container { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        /* Main Content Sections */
+        section.main { padding: 100px 10%; text-align: center; }
+        .content { max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
+        h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 40px; }
         
-        h2 { font-size: 2rem; border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 2rem; }
-        
-        .grant-card {
-            background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0;
+        .grant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .card { background: #f8fafc; padding: 40px; border-radius: 10px; text-align: left; border-top: 4px solid var(--accent); }
+        .tag { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+
+        footer { background: var(--dark); color: #94a3b8; padding: 50px; text-align: center; }
+        a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            #intro h1 { font-size: 2.5rem; }
+            .grant-grid { grid-template-columns: 1fr; }
         }
-        
-        .tag { background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem; display: inline-block; }
-
-        @keyframes fadeInImage { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        @keyframes fadeInText { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Simple Navigation */
-        .nav-links { margin-top: 2rem; }
-        .nav-links a { color: white; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; opacity: 0.7; transition: 0.3s; }
-        .nav-links a:hover { opacity: 1; color: var(--accent); }
-
-        footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--gray); }
     </style>
 </head>
 <body>
 
-    <section class="entrance">
-        <img src="031.jpg" alt="Maciej Koprowski" class="profile-img">
-        <div class="name-banner">
-            <h1>Maciej Koprowski</h1>
-            <p>Associate Professor</p>
-            <p style="opacity: 0.8; font-weight: 300;">Nicolaus Copernicus University | Toruń, Poland</p>
-            <div class="nav-links">
-                <a href="#research">Research</a>
-                <a href="#grants">Grants</a>
-                <a href="#contact">Contact</a>
+    <section id="intro">
+        <h1 data-aos="fade-down">Maciej Koprowski</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Associate Professor</p>
+        <div style="margin-top: 20px; font-weight: 300; opacity: 0.8;">
+            Nicolaus Copernicus University | Toruń, Poland
+        </div>
+    </section>
+
+    <section id="one" class="main">
+        <div class="content" data-aos="fade-up">
+            <h2>Research Vision</h2>
+            <p>I am an observational astrophysicist exploring the <strong>cosmic history of star formation</strong>[cite: 516, 517]. My research integrates multi-wavelength data to trace the evolution of the star-formation rate density ($\rho_{SFR}$) from the present day back to the <strong>reionization era ($z \sim 11$)</strong>[cite: 517, 527].</p>
+            <p>I am particularly focused on the dust-obscured side of the early Universe, utilizing high-resolution observations from <strong>JWST</strong>, <strong>ALMA</strong>, and <strong>SCUBA-2</strong>[cite: 521, 528, 685].</p>
+        </div>
+    </section>
+
+    <section id="two" class="main" style="background: #fff;">
+        <h2>Leading Programs</h2>
+        <div class="grant-grid">
+            <div class="card" data-aos="fade-right">
+                <span class="tag">NCN SONATA BIS</span>
+                <h4>Evolution of Star Formation with JWST</h4>
+                <p>Establishing a research group to analyze the first large-area <strong>JWST PRIMER</strong> survey, characterizing star-forming properties of ~120,000 early galaxies[cite: 527, 528, 529].</p>
+            </div>
+            <div class="card" data-aos="fade-left">
+                <span class="tag">NCN SONATA</span>
+                <h4>Time Evolution of the SFRD</h4>
+                <p>Determining the direct and indirect contribution of the brightest and faintest far-IR sources to the cosmic star formation history[cite: 91, 95, 97].</p>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <section id="research" data-aos="fade-up">
-            <h2>Research Vision</h2>
-            <p>I am an observational astrophysicist dedicated to unraveling the cosmic history of star formation[cite: 516]. My research integrates data from the UV to the far-infrared to describe the <strong>Star Formation Rate Density ($\rho_{SFR}$)</strong> across cosmic time[cite: 13, 517].</p>
-            <p>Currently, my work focuses on the **reionization era ($z \sim 11$)** using high-resolution data from the <strong>JWST PRIMER survey</strong>[cite: 527, 528].</p>
-        </section>
-
-        <section id="grants">
-            <h2 data-aos="fade-up">Leading Programs</h2>
-            
-            <div class="grant-card" data-aos="fade-right">
-                <span class="tag">NCN SONATA BIS</span>
-                <h4>Evolution of Star Formation in the Early Universe with JWST</h4>
-                <p>Establishing a new research team to analyze the large-area <strong>JWST NIRCam+MIRI</strong> imaging[cite: 527, 528]. We explore the star-forming main sequence and gas mass fractions of galaxies up to $z \sim 11$[cite: 532, 752].</p>
-            </div>
-
-            <div class="grant-card" data-aos="fade-left">
-                <span class="tag">NCN SONATA</span>
-                <h4>Cosmic History of the SFRD</h4>
-                <p>Investigating the evolution of star formation using <strong>ALMA</strong> and <strong>SCUBA-2</strong> data[cite: 26, 237]. This project applies novel stacking and de-blending techniques to account for dust-obscured stellar emission[cite: 97, 492].</p>
-            </div>
-        </section>
-
-        <section id="contact" data-aos="fade-up">
-            <h2>Contact</h2>
-            <div class="grant-card">
-                <p><strong>Email:</strong> mkoprowski@fizyka.umk.pl </p>
-                <p><strong>Address:</strong> Institute of Astronomy, NCU, ul. Gagarina 11, 87-100 Toruń, Poland [cite: 5, 467]</p>
-                <p><strong>ORCID:</strong> <a href="https://orcid.org/0000-0001-5785-1154" target="_blank">0000-0001-5785-1154</a></p>
-            </div>
-        </section>
-    </div>
-
     <footer>
-        &copy; 2024 Maciej Koprowski. Built with modern web standards.
+        <div class="content" data-aos="fade-up">
+            <h3>Get in Touch</h3>
+            <p>mkoprowski@fizyka.umk.pl</p>
+            <p>Institute of Astronomy, NCU<br>Gagarina 11, 87-100 Toruń, Poland</p>
+            <p><a href="https://orcid.org/0000-0001-5785-1154" target="_blank">ORCID: 0000-0001-5785-1154</a></p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 1200, once: true });
     </script>
 </body>
 </html>
