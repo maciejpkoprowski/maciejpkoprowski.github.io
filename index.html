@@ -1,92 +1,104 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <title>Dr. Maciej Koprowski | Associate Professor</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        :root { --accent: #38bdf8; --dark: #0f172a; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: #fff; color: #444; overflow-x: hidden; }
-        
-        /* Intro Section */
-        #intro {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.6)), url('031.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: #fff; text-align: center;
-        }
-        #intro h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; }
-        #intro p { font-size: 1.5rem; font-weight: 300; color: var(--accent); }
+<html>
+	<head>
+		<title>Maciej Koprowski | Associate Professor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom overlay to make text readable over your photo */
+			#intro { background-image: url("031.jpg"); background-attachment: fixed; background-size: cover; }
+			.grant-box { background: rgba(255,255,255,0.05); padding: 2em; border-radius: 8px; margin-bottom: 2em; border-left: 4px solid #38bdf8; }
+		</style>
+	</head>
+	<body class="is-preload">
 
-        /* Main Content Sections */
-        section.main { padding: 100px 10%; text-align: center; }
-        .content { max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
-        h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 40px; }
-        
-        .grant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
-        .card { background: #f8fafc; padding: 40px; border-radius: 10px; text-align: left; border-top: 4px solid var(--accent); }
-        .tag { color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+		<header id="header">
+				<h1>Maciej Koprowski</h1>
+				<nav>
+					<ul>
+						<li><a href="#intro">Intro</a></li>
+						<li><a href="#one">Vision</a></li>
+						<li><a href="#two">Programs</a></li>
+						<li><a href="#work">Team</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
 
-        footer { background: var(--dark); color: #94a3b8; padding: 50px; text-align: center; }
-        a { color: var(--accent); text-decoration: none; }
+		<section id="intro" class="main style1 dark fullscreen">
+				<div class="content">
+					<header>
+						<h2>Maciej Koprowski</h2>
+					</header>
+					<p><strong>Associate Professor</strong><br />
+					Nicolaus Copernicus University in Toruń</p>
+					<footer>
+						<a href="#one" class="button style2 down">More</a>
+					</footer>
+				</div>
+			</section>
 
-        @media (max-width: 768px) {
-            #intro h1 { font-size: 2.5rem; }
-            .grant-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
+		<section id="one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Research Vision</h2>
+					</header>
+					<p>I focus on the evolution of star formation in the early Universe. Using <strong>JWST</strong>, <strong>ALMA</strong>, and <strong>SCUBA-2</strong>, I investigate the star formation rate density ($\rho_{SFR}$) and luminosity functions (LF).</p>
+				</div>
+				<a href="#two" class="button style2 down anchor">Next</a>
+			</section>
 
-    <section id="intro">
-        <h1 data-aos="fade-down">Maciej Koprowski</h1>
-        <p data-aos="fade-up" data-aos-delay="500">Associate Professor</p>
-        <div style="margin-top: 20px; font-weight: 300; opacity: 0.8;">
-            Nicolaus Copernicus University | Toruń, Poland
-        </div>
-    </section>
+		<section id="two" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Active Grants</h2>
+					</header>
+					<div class="grant-box">
+						<h4 style="color: #38bdf8;">SONATA BIS (NCN)</h4>
+						<p>Establishing a team to explore star formation uisng <strong>JWST PRIMER</strong> data, reaching redshifts of $z \sim 11$.</p>
+					</div>
+					<div class="grant-box">
+						<h4 style="color: #38bdf8;">SONATA (NCN)</h4>
+						<p>Tracing the SFRD evolution out to $z > 5$ using ALMA and SCUBA-2 datasets.</p>
+					</div>
+				</div>
+				<a href="#work" class="button style2 down anchor">Next</a>
+			</section>
 
-    <section id="one" class="main">
-        <div class="content" data-aos="fade-up">
-            <h2>Research Vision</h2>
-            <p>I am an observational astrophysicist exploring the <strong>cosmic history of star formation</strong>[cite: 516, 517]. My research integrates multi-wavelength data to trace the evolution of the star-formation rate density ($\rho_{SFR}$) from the present day back to the <strong>reionization era ($z \sim 11$)</strong>[cite: 517, 527].</p>
-            <p>I am particularly focused on the dust-obscured side of the early Universe, utilizing high-resolution observations from <strong>JWST</strong>, <strong>ALMA</strong>, and <strong>SCUBA-2</strong>[cite: 521, 528, 685].</p>
-        </div>
-    </section>
+		<section id="work" class="main style3 primary">
+				<div class="content">
+					<header>
+						<h2>Join the Team</h2>
+						<p>I am establishing a new galaxy evolution group in Toruń. As part of my <strong>SONATA Bis</strong> program, I am recruiting a Postdoc and a PhD student to work on JWST data.</p>
+					</header>
+				</div>
+			</section>
 
-    <section id="two" class="main" style="background: #fff;">
-        <h2>Leading Programs</h2>
-        <div class="grant-grid">
-            <div class="card" data-aos="fade-right">
-                <span class="tag">NCN SONATA BIS</span>
-                <h4>Evolution of Star Formation with JWST</h4>
-                <p>Establishing a research group to analyze the first large-area <strong>JWST PRIMER</strong> survey, characterizing star-forming properties of ~120,000 early galaxies[cite: 527, 528, 529].</p>
-            </div>
-            <div class="card" data-aos="fade-left">
-                <span class="tag">NCN SONATA</span>
-                <h4>Time Evolution of the SFRD</h4>
-                <p>Determining the direct and indirect contribution of the brightest and faintest far-IR sources to the cosmic star formation history[cite: 91, 95, 97].</p>
-            </div>
-        </div>
-    </section>
+		<section id="contact" class="main style3 secondary">
+				<div class="content">
+					<header>
+						<h2>Contact</h2>
+						<p>mkoprowski@fizyka.umk.pl<br />
+						Room 19, Institute of Astronomy</p>
+					</header>
+				</div>
+			</section>
 
-    <footer>
-        <div class="content" data-aos="fade-up">
-            <h3>Get in Touch</h3>
-            <p>mkoprowski@fizyka.umk.pl</p>
-            <p>Institute of Astronomy, NCU<br>Gagarina 11, 87-100 Toruń, Poland</p>
-            <p><a href="https://orcid.org/0000-0001-5785-1154" target="_blank">ORCID: 0000-0001-5785-1154</a></p>
-        </div>
-    </footer>
+		<footer id="footer">
+				<ul class="menu">
+					<li>&copy; Maciej Koprowski</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1200, once: true });
-    </script>
-</body>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/jquery.scrolly.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/jquery.scrollex.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/browser.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/breakpoints.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/util.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/ajlkn/html5up-big-picture@master/assets/js/main.js"></script>
+
+	</body>
 </html>
